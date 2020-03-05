@@ -3,7 +3,7 @@ Implementation-Title: CT-PC-SpringBoot
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: nspln
 Implementation-Vendor-Id: CT-PC
-Build-Jdk: 1.8.0_181
+Build-Jdk: 1.8.0_241
 Implementation-URL: http://projects.spring.io/spring-boot/CTPC/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.

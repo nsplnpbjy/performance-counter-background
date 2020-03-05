@@ -33,6 +33,6 @@ public interface perfDao {
 	@Select("select b.id from userinperf a,user b where a.time=#{date} and (b.role='领导' or b.role='团队长') ")
 	public List<String> isLeaderAndTeamLeaderInUserInPerf(Date date);
 	
-	@Insert("insert into userinperf (id,time) values(#{id},#{date})")
+	@Insert("insert into userinperf (id,time,vote) values(#{id},#{date},0)")
 	public void insertIntoUserInPerfById(String id,Date date);
 }

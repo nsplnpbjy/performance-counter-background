@@ -66,7 +66,6 @@ public class perfServiceImpl implements perfService{
 			Iterator<User> leadersi = leaders.iterator();
 			while(leadersi.hasNext()) {
 				String id = leadersi.next().getId();
-				System.out.println(id);
 				perfdao.insertIntoUserInPerfById(id, date);
 			}
 		}
