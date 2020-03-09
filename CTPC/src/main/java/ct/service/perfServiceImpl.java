@@ -54,13 +54,14 @@ public class perfServiceImpl implements perfService{
 		return returnJson;
 	}
 	
-	@SuppressWarnings("deprecation")//确定领导和团队长在本月绩效考核名单中
+	@SuppressWarnings("deprecation")//确定领导和团队长在本月绩效考核名单中,这个方法有缺陷，在没有增加人员（即user表）的情况下不会出现bug
+	//在有人员增加的情况下，必须清空userInPerf表才能正常运行
+	//暂时不去解决这个bug
 	@Override
 	public void confirmTeamLeaderAndLeaderUserInPerf() {
 		Date date = new Date(System.currentTimeMillis());
 		date.setDate(1);
 		List<String> sl = perfdao.isLeaderAndTeamLeaderInUserInPerf(date);
-		System.out.print(sl);
 		if(sl.isEmpty()) {
 			List<User> leaders = userdao.selectAllLeaderAndTeamLeader();
 			Iterator<User> leadersi = leaders.iterator();
